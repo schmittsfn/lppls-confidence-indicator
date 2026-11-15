@@ -73,12 +73,16 @@ research harness; this repository's API has not been expanded by these figures.
 
 ![LPPLS confidence indicator: percentage of common dates with changed warnings](docs/results/sensitivity.png)
 
+*Most tested settings leave the warnings largely unchanged, but some alter enough decisions to matter. These percentages describe how much the answers change—not the chance of a crash.*
+
 Changing one convention at a time can change a warning without establishing
 which convention is correct. Percentages use each alternative's common valid
 dates; counts and dates are in [the plotted data](docs/results/summary.json).
 The dashed 5% line is a predeclared descriptive marker, not a significance test.
 
 ![LPPLS confidence indicator: baseline entry outcomes versus same-calendar controls](docs/results/outcomes.png)
+
+*For NVIDIA, the simple trend rule earned more and suffered a smaller worst decline. For the semiconductor fund, the model reduced the worst decline but earned less and kept much more money in cash. The extra protection came with a cost.*
 
 Each instrument uses its own period shown in the graphic. Compare policies
 within an instrument, not returns across instruments or repositories. Lower
