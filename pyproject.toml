@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lppls-confidence-indicator"
+version = "0.1.0"
+description = "Inspectable lppls confidence indicator research implementation with reference tests"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "MIT"
+authors = [{name = "Stefan Schmitt"}]
+dependencies = ['numpy==2.5.2', 'pandas==3.0.5', 'scipy==1.18.1', 'cma==4.5.0', 'astropy==8.0.2', 'arch==8.0.0']
+
+[project.urls]
+Repository = "https://github.com/schmittsfn/lppls-confidence-indicator"
+Issues = "https://github.com/schmittsfn/lppls-confidence-indicator/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lppls_confidence_indicator"]
