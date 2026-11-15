@@ -1,0 +1,198 @@
+{
+  "title": "LPPLS confidence indicator",
+  "as_of": "2026-11-13",
+  "study": "Historical development study; not untouched holdout or original-paper replication",
+  "protocol_sha256": "7ed4365b84fde521d11f7779f8ca8e542a03ce4406a3a4cbc5293676a1a43833",
+  "comparison_id": "80f72ba458bf4a9e83014a5dfc6d5054",
+  "source": "Aggregate outputs from a separate sensitivity harness using archived market inputs; this repository does not include that harness or raw inputs.",
+  "variants": [
+    {
+      "name": "Oscillations: omega / 2",
+      "id": "printed_omega_over_two",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 80,
+          "warning_disagreement_fraction": 0.012806146950536258,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 45,
+          "warning_disagreement_fraction": 0.015015015015015015,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    },
+    {
+      "name": "Denser Lomb grid",
+      "id": "lomb_grid10",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 5,
+          "warning_disagreement_fraction": 0.0008003841844085161,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 5,
+          "warning_disagreement_fraction": 0.001668335001668335,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    },
+    {
+      "name": "Davies false-alarm method",
+      "id": "lomb_davies",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 0,
+          "warning_disagreement_fraction": 0.0,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 0,
+          "warning_disagreement_fraction": 0.0,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    },
+    {
+      "name": "Unit-root tests with trend",
+      "id": "unit_root_trend",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 275,
+          "warning_disagreement_fraction": 0.04402113014246838,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 180,
+          "warning_disagreement_fraction": 0.06006006006006006,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    },
+    {
+      "name": "ADF with BIC",
+      "id": "adf_bic",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 25,
+          "warning_disagreement_fraction": 0.00400192092204258,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 45,
+          "warning_disagreement_fraction": 0.015015015015015015,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    },
+    {
+      "name": "Half PP lags",
+      "id": "pp_half_lags",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 40,
+          "warning_disagreement_fraction": 0.006403073475268129,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 10,
+          "warning_disagreement_fraction": 0.00333667000333667,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    },
+    {
+      "name": "Double PP lags",
+      "id": "pp_double_lags",
+      "instruments": {
+        "NVDA": {
+          "common_observations": 6247,
+          "warning_disagreements": 155,
+          "warning_disagreement_fraction": 0.024811909716664,
+          "first": "2002-01-17",
+          "last": "2026-11-13"
+        },
+        "SMH": {
+          "common_observations": 2997,
+          "warning_disagreements": 60,
+          "warning_disagreement_fraction": 0.02002002002002002,
+          "first": "2014-12-15",
+          "last": "2026-11-13"
+        }
+      }
+    }
+  ],
+  "baseline": {
+    "NVDA": {
+      "first": "2002-01-17",
+      "last": "2026-11-13",
+      "readings": 6247,
+      "policies": {
+        "tuned": {
+          "annualized_return": 0.2244495483899165,
+          "max_drawdown": -0.5511044943074783,
+          "mean_exposure": 0.49089680340356834
+        },
+        "trend": {
+          "annualized_return": 0.24283902700786708,
+          "max_drawdown": -0.4796767466412445,
+          "mean_exposure": 0.520049681973749
+        },
+        "immediate": {
+          "annualized_return": 0.2646305903535344,
+          "max_drawdown": -0.8650044118594983,
+          "mean_exposure": 0.9295989950872334
+        }
+      },
+      "entry_first": "2002-01-17"
+    },
+    "SMH": {
+      "first": "2014-12-15",
+      "last": "2026-11-13",
+      "readings": 2997,
+      "policies": {
+        "tuned": {
+          "annualized_return": 0.1564936818702154,
+          "max_drawdown": -0.19027209880715457,
+          "mean_exposure": 0.373037563860232
+        },
+        "trend": {
+          "annualized_return": 0.19014135606823968,
+          "max_drawdown": -0.3337771975247579,
+          "mean_exposure": 0.6897807308640675
+        },
+        "immediate": {
+          "annualized_return": 0.27587692841202327,
+          "max_drawdown": -0.4628724050054873,
+          "mean_exposure": 0.9185796084544954
+        }
+      },
+      "entry_first": "2014-12-15"
+    }
+  }
+}
