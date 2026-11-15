@@ -68,25 +68,48 @@ Neither a zero reading nor a high reading establishes a future outcome.
 
 ## Example research results
 
-The graphics below summarize a separate convention-sensitivity study completed
-on 15 November 2026. They are **historical development results**, not the paper's
-results, an untouched holdout test, or a backtest reproduced by this standalone
-package. The study's baseline warnings matched its earlier archived baseline.
-Alternative-convention execution and the entry evaluator live in the separate
-research harness; this repository's API has not been expanded by these figures.
+Imagine you are considering buying a stock, but are worried about buying just
+before a large fall. A risk model looks for signs that conditions may be becoming
+dangerous. In this experiment, an alert is a reason to wait before buying; it is
+not a prediction that the price must fall.
+
+This model looks for a price rise that is accelerating in a pattern associated with some speculative booms. A strong-looking rally can still be fragile; the model tries to identify that vulnerability.
+
+The charts test whether those alerts could help with that buying decision.
+**NVDA is NVIDIA's stock. SMH is a fund holding semiconductor companies.**
+They are examples used to investigate the model, not investment recommendations.
+
+### Would the model give you a consistent answer?
+
+A research paper does not always specify every calculation choice. Two people
+can therefore build reasonable versions of the same idea and receive different
+alerts. Before trusting either version, we check how often they disagree.
 
 ![LPPLS confidence indicator: percentage of common dates with changed warnings](docs/results/sensitivity.png)
 
-*Most tested settings leave the warnings largely unchanged, but some alter enough decisions to matter. These percentages describe how much the answers change—not the chance of a crash.*
+*Read this as a check on how much the advice depends on the settings. Each row compares one alternative with our starting version. A bar at 0% means they raised alerts on exactly the same days; 10% would mean they disagreed on one day in ten. Short bars mean more agreement—not that either version successfully predicted a fall.*
 
 Changing one convention at a time can change a warning without establishing
 which convention is correct. Percentages use each alternative's common valid
 dates; counts and dates are in [the plotted data](docs/results/summary.json).
 The dashed 5% line is a predeclared descriptive marker, not a significance test.
 
+### Would listening to the alerts have helped?
+
+Now imagine following three different approaches over the same period:
+
+- **Model baseline:** use our starting version of the model; wait when it raises an alert.
+- **Trend control:** use a simpler rule based on the stock's price relative to its 50- and 200-day averages.
+- **Immediate entry:** buy at each scheduled opportunity without waiting for either rule.
+
+All three use the same scheduled opportunities, holding periods and trading
+costs. Money waiting to be invested stays in cash. The chart shows the resulting
+portfolio growth and its largest fall, rather than counting how many predictions
+were right.
+
 ![LPPLS confidence indicator: baseline entry outcomes versus same-calendar controls](docs/results/outcomes.png)
 
-*For NVIDIA, the simple trend rule earned more and suffered a smaller worst decline. For the semiconductor fund, the model reduced the worst decline but earned less and kept much more money in cash. The extra protection came with a cost.*
+*Read the two panels together: how much did the money grow, and how painful was the worst fall along the way? On the left, a larger number means faster yearly compound growth. On the right, −40% means the portfolio fell from a previous high of, for example, $100 to $60 before recovering or reaching the end of the test. A number closer to zero means a smaller worst loss. Less time invested can reduce losses, but can also mean missing gains.*
 
 Each instrument uses its own period shown in the graphic. Compare policies
 within an instrument, not returns across instruments or repositories. Lower
@@ -94,6 +117,15 @@ drawdown can reflect spending more time in cash. The model baseline underperform
 the trend control's annualized return on the NVIDIA calendar.
 
 Diagnostics reuse all archived five-session fits; warnings are held until the next reading. These plots exclude the separate annual-sampled optimizer checks. Confidence is a fraction of qualified fits, not a crash probability.
+
+### Study details and limitations
+
+The graphics below summarize a separate convention-sensitivity study completed
+on 15 November 2026. They are **historical development results**, not the paper's
+results, an untouched holdout test, or a backtest reproduced by this standalone
+package. The study's baseline warnings matched its earlier archived baseline.
+Alternative-convention execution and the entry evaluator live in the separate
+research harness; this repository's API has not been expanded by these figures.
 
 **Entry experiment:** three funded sleeves; opportunities every 21 sessions;
 next-open execution; fixed 60-session exit; at most 20 sessions waiting; 10 basis
