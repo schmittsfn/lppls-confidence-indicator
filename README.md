@@ -2,6 +2,8 @@
 
 *Does this price rise resemble an increasingly unstable boom?*
 
+*Could an increasingly rapid price rise be making the stock more vulnerable to a sharp reversal?*
+
 Standalone Python research implementation with independent numerical fixtures
 and explicit replication questions for the paper authors.
 
