@@ -1,5 +1,7 @@
 # LPPLS confidence indicator
 
+*Does this price rise resemble an increasingly unstable boom?*
+
 Standalone Python research implementation with independent numerical fixtures
 and explicit replication questions for the paper authors.
 
