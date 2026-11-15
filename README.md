@@ -4,6 +4,8 @@
 
 *Could an increasingly rapid price rise be making the stock more vulnerable to a sharp reversal?*
 
+![Conceptual illustration: an accelerating, oscillating price rise can become increasingly fragile.](docs/hero/concept.png)
+
 Standalone Python research implementation with independent numerical fixtures
 and explicit replication questions for the paper authors.
 
@@ -131,3 +133,16 @@ respective licenses and rights. No independent academic audit is claimed.
 
 CMA may warn that optional plotting is unavailable because matplotlib is not
 installed. The numerical implementation and tests do not require plotting.
+
+## Rebuild the introductory illustration
+
+The introductory graphic is drawn locally with SwiftUI and exported with
+`ImageRenderer`. It is schematic, not observed market data. No image service,
+API key or paid generation is used. On macOS with Xcode command-line tools:
+
+```sh
+swiftc -parse-as-library examples/hero/HeroView.swift examples/hero/Export.swift -o /tmp/render-risk-hero
+/tmp/render-risk-hero docs/hero/concept.png
+```
+
+The export is a 2400 × 940 PNG. Source: [HeroView.swift](examples/hero/HeroView.swift).
